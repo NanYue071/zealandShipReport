@@ -1,12 +1,20 @@
-# Define here the models for your scraped items
-#
-# See documentation in:
-# https://docs.scrapy.org/en/latest/topics/items.html
-
 import scrapy
 
 
 class ZealandshipreportItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
+    port = scrapy.Field()
+    week = scrapy.Field()
+    status = scrapy.Field()
+    vessel = scrapy.Field()
+    imo = scrapy.Field()
+    voyage = scrapy.Field()
+    agent = scrapy.Field()
+    exporter = scrapy.Field()
+    arrival = scrapy.Field()
+    departure = scrapy.Field()
+    berth = scrapy.Field()
+    trade = scrapy.Field()
+    fromPort = scrapy.Field()
+    toPort = scrapy.Field()
+    originAndDest = scrapy.Field()
     pass
