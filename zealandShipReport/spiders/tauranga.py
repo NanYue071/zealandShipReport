@@ -52,8 +52,8 @@ class TaurangaSpider(Spider):
 
         # Departed Vessels的船期信息
         departed_vessels_rows = response.xpath('.//table[@id="pot-data-table-3"]/tbody/tr')
-        if expected_arrivals_rows is not None:
-            for row in expected_arrivals_rows:
+        if departed_vessels_rows is not None:
+            for row in departed_vessels_rows:
                 columns = row.xpath('.//td/text()').getall()
                 if re.search(r"logs", columns[6], re.IGNORECASE):
                     item = self.parse_data(columns, status='Departed Vessels')

@@ -44,12 +44,18 @@ def url_to_mid(url: str):
     return int(result)
 
 
-def parse_time(str):
-    """
-    Wed Oct 19 23:44:36 +0800 2022 => 2022-10-19 23:44:36
-    """
+def parse_time(str_time):
     # 解析日期字符串，指定输入格式
-    date_obj = datetime.strptime(str, "%d/%m/%Y %H:%M")
+    date_obj = datetime.strptime(str_time, "%d/%m/%Y %H:%M")
+
+    # 格式化为所需的输出格式
+    formatted_date = date_obj.strftime("%Y/%m/%d")
+    return formatted_date
+
+
+def parse_date(str_time):
+    # 解析日期字符串，指定输入格式
+    date_obj = datetime.strptime(str_time, "%d/%m/%Y")
 
     # 格式化为所需的输出格式
     formatted_date = date_obj.strftime("%Y/%m/%d")
