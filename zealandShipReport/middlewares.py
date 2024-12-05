@@ -7,6 +7,7 @@ import re
 from zealandShipReport import settings
 from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
 from scrapy.http.headers import Headers
+from scrapy.utils.project import get_project_settings
 
 
 class IPProxyMiddleware(object):
@@ -16,6 +17,7 @@ class IPProxyMiddleware(object):
     def __init__(self):
         # 爬取有效ip
         self.ip_list = crawl_proxy.get_ips(pages=3, refresh=False)
+        self.settings = get_project_settings()
         # 请求已经失败的次数
         self.retry_time = 0
         self.index = random.randint(0, len(self.ip_list) - 1)
@@ -40,7 +42,7 @@ class IPProxyMiddleware(object):
         # 针对4**、和5** 响应码，重新选取 ip
         if re.findall('[45]\d+', str(response.status)):
             print(u'[%s] 响应状态码：%s' % (response.url, response.status))
-            if self.retry_time > settings.get('MAX_RETRY', 5):
+            if self.retry_time > self.settings.get('MAX_RETRY', 5):
                 return response
             if response.status == 418:
                 sec = random.randrange(30, 35)
@@ -82,8 +84,8 @@ class RandomUserAgentMiddleware(UserAgentMiddleware):
         # 从 代理 列表中随机选取一个 代理
         agent = random.choice(self.user_agent)
         print('当前 User-Agent ：', agent)
-        self.headers['User-Agent'] = agent
-        request.headers = self.headers
+        # self.headers['User-Agent'] = agent
+        request.headers['User-Agent'] = agent
 
 
 class ZealandshipreportDownloaderMiddleware:
@@ -94,6 +96,7 @@ class ZealandshipreportDownloaderMiddleware:
         return s
 
     def process_request(self, request, spider):
+        spider.logger.info(f"Request Headers in Downloader: {request.headers}")
         return None
 
     def process_response(self, request, response, spider):
