@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 from datetime import datetime
+import re
 
 
 def base62_decode(string):
@@ -60,3 +61,21 @@ def parse_date(str_time):
     # 格式化为所需的输出格式
     formatted_date = date_obj.strftime("%Y/%m/%d")
     return formatted_date
+
+
+# 时间戳转换为日期
+def timestamp_to_date(str_time):
+    # 1. 使用正则表达式去掉转义字符 \/ 和 /Date()，提取时间戳
+    match = re.search(r"\/Date\((\d+)\)\/", str_time)
+    if match:
+        timestamp = int(match.group(1))
+
+        # 2. 将时间戳从毫秒转换为秒
+        timestamp = timestamp / 1000
+
+        # 3. 转换为标准日期
+        date_time = datetime.fromtimestamp(timestamp)
+
+        # 格式化为所需的输出格式
+        formatted_date = date_time.strftime("%Y/%m/%d")
+        return formatted_date

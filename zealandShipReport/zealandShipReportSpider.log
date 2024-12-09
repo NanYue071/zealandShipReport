@@ -1,0 +1,277 @@
+2024-12-09 03:52:47 [scrapy.utils.log] INFO: Scrapy 2.6.2 started (bot: zealandShipReport)
+2024-12-09 03:52:47 [scrapy.utils.log] INFO: Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.21.0, Twisted 22.2.0, Python 3.9.13 (main, Aug 25 2022, 23:51:50) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 1.1.1w  11 Sep 2023), cryptography 37.0.1, Platform Windows-10-10.0.22631-SP0
+2024-12-09 03:52:47 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'zealandShipReport',
+ 'CONCURRENT_REQUESTS': 32,
+ 'DOWNLOAD_DELAY': 3,
+ 'LOG_FILE': 'zealandShipReportSpider.log',
+ 'NEWSPIDER_MODULE': 'zealandShipReport.spiders',
+ 'SPIDER_MODULES': ['zealandShipReport.spiders']}
+2024-12-09 03:52:47 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2024-12-09 03:52:47 [scrapy.extensions.telnet] INFO: Telnet Password: 1761ab80bebab24c
+2024-12-09 03:52:47 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-12-09 03:52:49 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['zealandShipReport.middlewares.RandomUserAgentMiddleware',
+ 'zealandShipReport.middlewares.IPProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'zealandShipReport.middlewares.ZealandshipreportDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-12-09 03:52:49 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-12-09 03:52:49 [scrapy.middleware] INFO: Enabled item pipelines:
+['zealandShipReport.pipelines.ZealandshipreportPipeline']
+2024-12-09 03:52:49 [scrapy.core.engine] INFO: Spider opened
+2024-12-09 03:52:49 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-12-09 03:52:49 [wellington] INFO: Spider opened: wellington
+2024-12-09 03:52:49 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-12-09 03:53:07 [wellington] INFO: Request Headers in Downloader: {b'Content-Type': [b'application/json'], b'Accept': [b'*/*'], b'User-Agent': [b'Mozilla/5.0 (X11; U; Linux x86_64; zh-CN; rv:1.9.2.10) Gecko/20100922 Ubuntu/10.10 (maverick) Firefox/3.6.10']}
+2024-12-09 03:53:09 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService> (referer: None)
+2024-12-09 03:53:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'Nautilus Shipping Agency',
+ 'arrival': None,
+ 'berth': 'AQ1',
+ 'departure': '2024/11/09',
+ 'exporter': '',
+ 'fromPort': None,
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'Departed Vessels',
+ 'toPort': 'Tauranga',
+ 'trade': 'Logs',
+ 'vessel': 'Kitakami River',
+ 'voyage': 'KIRRV202402',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'Ferguson Marine',
+ 'arrival': '2024/11/09',
+ 'berth': 'AQ1',
+ 'departure': '2024/11/15',
+ 'exporter': '',
+ 'fromPort': 'Lanshan Pt',
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'Departed Vessels',
+ 'toPort': 'Tauranga',
+ 'trade': 'Logs',
+ 'vessel': 'Thor Nitnirund',
+ 'voyage': 'TND2405',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'Nautilus Shipping Agency',
+ 'arrival': '2024/11/15',
+ 'berth': 'AQ1',
+ 'departure': '2024/11/19',
+ 'exporter': '',
+ 'fromPort': 'Adelaide',
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'Departed Vessels',
+ 'toPort': 'Tauranga',
+ 'trade': 'Logs',
+ 'vessel': 'Berge Hallasan',
+ 'voyage': 'BGHV58',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'Ferguson Marine',
+ 'arrival': '2024/11/19',
+ 'berth': 'STM',
+ 'departure': '2024/11/21',
+ 'exporter': '',
+ 'fromPort': 'Auckland',
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'Departed Vessels',
+ 'toPort': 'Marsden Point',
+ 'trade': 'Logs',
+ 'vessel': 'Ocean Flora',
+ 'voyage': 'ONFAV2024061',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'Nautilus Shipping Agency',
+ 'arrival': '2024/11/23',
+ 'berth': 'AQ1',
+ 'departure': '2024/11/26',
+ 'exporter': '',
+ 'fromPort': 'Brisbane',
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'Departed Vessels',
+ 'toPort': 'Napier',
+ 'trade': 'Logs',
+ 'vessel': 'DL Tulip',
+ 'voyage': 'DLT008',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'Aranui Shipping Ltd',
+ 'arrival': '2024/11/26',
+ 'berth': 'AQ1',
+ 'departure': '2024/11/30',
+ 'exporter': '',
+ 'fromPort': 'Deep Sea (No Port)',
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'Departed Vessels',
+ 'toPort': 'Marsden Point',
+ 'trade': 'Logs',
+ 'vessel': 'Belle Lune',
+ 'voyage': 'BELUV22',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'Nautilus Shipping Agency',
+ 'arrival': '2024/12/03',
+ 'berth': 'AQ1',
+ 'departure': '2024/12/06',
+ 'exporter': '',
+ 'fromPort': 'Tauranga',
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'Departed Vessels',
+ 'toPort': 'Napier',
+ 'trade': 'Logs',
+ 'vessel': 'TS Echo',
+ 'voyage': 'TECH2024002',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'Aranui Shipping Ltd',
+ 'arrival': '2024/12/09',
+ 'berth': 'AQ1',
+ 'departure': None,
+ 'exporter': '',
+ 'fromPort': 'Deep Sea (No Port)',
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'Departed Vessels',
+ 'toPort': None,
+ 'trade': 'Logs',
+ 'vessel': 'Marawah Island',
+ 'voyage': 'MHID12',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:27 [wellington] INFO: Request Headers in Downloader: {b'Content-Type': [b'application/json'], b'Accept': [b'*/*'], b'Referer': [b'https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService'], b'User-Agent': [b'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727; Media Center PC 6.0)']}
+2024-12-09 03:53:27 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService> (referer: https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService)
+2024-12-09 03:53:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'Aranui Shipping Ltd',
+ 'arrival': '2024/12/09',
+ 'berth': 'AQ1',
+ 'departure': '2024/12/14',
+ 'exporter': '',
+ 'fromPort': 'Deep Sea (No Port)',
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'Expected Arrivals',
+ 'toPort': 'Deep Sea (No Port)',
+ 'trade': 'Logs',
+ 'vessel': 'Marawah Island',
+ 'voyage': 'MHID12',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'Nautilus Shipping Agency',
+ 'arrival': '2024/12/14',
+ 'berth': 'AQ1',
+ 'departure': '2024/12/18',
+ 'exporter': '',
+ 'fromPort': 'Auckland',
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'Expected Arrivals',
+ 'toPort': 'Marsden Point',
+ 'trade': 'Logs',
+ 'vessel': 'SE Cardi',
+ 'voyage': 'SECI003',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'Southern Maritime Services',
+ 'arrival': '2024/12/16',
+ 'berth': 'AQ1',
+ 'departure': '2024/12/19',
+ 'exporter': '',
+ 'fromPort': 'Picton',
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'Expected Arrivals',
+ 'toPort': 'Marsden Point',
+ 'trade': 'Logs',
+ 'vessel': 'Pewee',
+ 'voyage': 'PWE058',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'To Be Advised',
+ 'arrival': '2024/12/20',
+ 'berth': 'AQ1',
+ 'departure': '2024/12/24',
+ 'exporter': '',
+ 'fromPort': 'Auckland',
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'Expected Arrivals',
+ 'toPort': 'Tarakohe',
+ 'trade': 'Logs',
+ 'vessel': 'Union Fuji',
+ 'voyage': '',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:36 [wellington] INFO: Request Headers in Downloader: {b'Content-Type': [b'application/json'], b'Accept': [b'*/*'], b'Referer': [b'https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService'], b'User-Agent': [b'Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 5.2; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.04506.30)']}
+2024-12-09 03:53:37 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService> (referer: https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService)
+2024-12-09 03:53:37 [scrapy.core.scraper] DEBUG: Scraped from <200 https://jmt.centreport.co.nz/bin_public/jadehttp.dll/shipping_movements?CentricRestService>
+{'agent': 'Aranui Shipping Ltd',
+ 'arrival': '2024/12/09',
+ 'berth': 'AQ1',
+ 'departure': '2024/12/14',
+ 'exporter': '',
+ 'fromPort': 'Deep Sea (No Port)',
+ 'imo': '',
+ 'originAndDest': '',
+ 'port': 'Wellington',
+ 'status': 'In Port',
+ 'toPort': 'Deep Sea (No Port)',
+ 'trade': 'Logs',
+ 'vessel': 'Marawah Island',
+ 'voyage': 'MHID12',
+ 'week': '2024/12/09'}
+2024-12-09 03:53:37 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-12-09 03:53:37 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 2210,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/POST': 3,
+ 'downloader/response_bytes': 29425,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'elapsed_time_seconds': 47.803779,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 12, 8, 19, 53, 37, 605574),
+ 'item_scraped_count': 13,
+ 'log_count/DEBUG': 17,
+ 'log_count/INFO': 14,
+ 'request_depth_max': 2,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2024, 12, 8, 19, 52, 49, 801795)}
+2024-12-09 03:53:37 [scrapy.core.engine] INFO: Spider closed (finished)

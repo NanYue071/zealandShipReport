@@ -5,6 +5,7 @@ from zealandShipReport.spiders.eastLand import EastLandSpider
 from zealandShipReport.spiders.tauranga import TaurangaSpider
 from zealandShipReport.spiders.northPort import NorthPortSpider
 from zealandShipReport.spiders.napier import NapierSpider
+from zealandShipReport.spiders.wellington import WellingtonSpider
 from scrapy import signals
 from scrapy.signalmanager import dispatcher
 
@@ -23,11 +24,12 @@ mode_to_spider = {
     'Tauranga': TaurangaSpider,
     'EastLand': EastLandSpider,
     'northPort': NorthPortSpider,
-    'napier': NapierSpider
+    'napier': NapierSpider,
+    'wellington': WellingtonSpider,
 }
 
 # 连接信号，爬虫关闭时触发 `spider_closed` 回调函数
 # dispatcher.connect(spider_closed, signal=signals.spider_closed)
 
-process.crawl(mode_to_spider['napier'])
+process.crawl(mode_to_spider['wellington'])
 process.start()
